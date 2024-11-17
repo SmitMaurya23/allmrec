@@ -243,7 +243,7 @@ class A_llmrec_model(nn.Module):
     
     def make_candidate_text(self, interact_ids, candidate_num, target_item_id, target_item_title):
         neg_item_id = []
-        while len(neg_item_id)<50:
+        while len(neg_item_id)<20:
             t = np.random.randint(1, self.item_num+1)
             if not (t in interact_ids or t in neg_item_id):
                 neg_item_id.append(t)
